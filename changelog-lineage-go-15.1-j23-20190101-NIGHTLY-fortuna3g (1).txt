@@ -1,0 +1,538 @@
+
+Galaxy-MSM8916/android_device_samsung_msm8916-common
+=====================================================
+
+commit af022c3541caf18d63401ed15b43d3f7cbab30e7 (HEAD)
+Author: Vincent Zvikaramba <zvikovincent@gmail.com>
+Date:   Wed Mar 14 17:10:02 2018 -0400
+
+    [DNM] msm8916: Import Go configs
+    
+    Change-Id: I0a21c7a80e08fb6dccbb8cb0947c779dcfd52040
+
+commit 6c635a0fd45588a1241fc0d1dfe84dbc57c57525
+Author: Vincent <vincent.zvikaramba@mail.utoronto.ca>
+Date:   Mon Mar 19 16:16:23 2018 -0400
+
+    [DNM] msm8916: Add custom updater uri for GO
+    
+    Change-Id: I52a3dd8f1b7b6317d2a19b2a82bfee423961b247
+
+LineageOS/android_device_samsung_qcom-common
+=============================================
+
+commit 6b3768a2f74edf8576142080419853f0ecd97fad (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/lineage-15.1)
+Author: Paul Keith <javelinanddart@gmail.com>
+Date:   Thu Feb 22 01:55:15 2018 +0100
+
+    SamsungDoze: Rename to avoid conflicts with AdvancedDisplay
+    
+    Change-Id: I669835f3563b9eea4fce6db45552c0e3a0888911
+
+LineageOS/android_hardware_samsung
+===================================
+
+commit 7afc5db86e681471994ae224168bff194f56a6c5 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/lineage-15.1)
+Author: Michael Bestas <mkbestas@lineageos.org>
+Date:   Fri Dec 14 23:47:23 2018 +0200
+
+    Automatic translation import
+    
+    Change-Id: I714d27f512ae0d1324374ad7f40677a287ab25cd
+
+Galaxy-MSM8916/android_kernel_samsung_msm8916
+==============================================
+
+commit a1ea46189ee3f8f379cda3fe95a47a249b586453 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: danile71 <danile71@gmail.com>
+Date:   Thu Oct 18 01:28:29 2018 +0300
+
+    serranovexx:  Fix gpio SIM
+    
+    Change-Id: Ie40fd1e9e2b48551c8844dc9681e800f931a83da
+
+Galaxy-MSM8916/proprietary_vendor_samsung
+==========================================
+
+commit 99f43a26021f5ef2f574a5d5d972fcd66c21cdec (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: danile71 <danile71@gmail.com>
+Date:   Wed Oct 17 13:15:28 2018 +0300
+
+    serranovexx-common: separate to lte and 3g
+    
+    Change-Id: I13b91a77ff2000e2e8d4a27aa8652e7e4a57ff44
+
+Galaxy-MSM8916/android_hardware_qcom_audio
+===========================================
+
+commit 64b8730ade4081c74d17d6f49c6f13ac23a862cd (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/lineage-15.1-caf-8916)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Tue Sep 25 19:25:46 2018 -0400
+
+    hal: Always build msim voice extension
+    
+     - There's no need to check if the feature is enabled since
+       this is required by every device using the hal fork.
+    
+    Change-Id: I2dbc49cd0b658f0735752c058cdc5fd9052102f0
+
+LineageOS/android_device_qcom_common
+=====================================
+
+commit 6e48da0dd09ba3ccd7c84a147aed502ca9429dc5 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/lineage-15.1)
+Author: Michael Bestas <mkbestas@lineageos.org>
+Date:   Sun Mar 25 21:14:41 2018 +0300
+
+    Remove QC releasetools and recovery extensions
+    
+    * They are outdated and they aren't used by anyone
+    
+    Change-Id: I93d3f47718a0ce413ff8b4d773d342565544ba27
+
+OmniROM/android_bootable_recovery
+==================================
+
+commit 08ee1e2fcda8f9b36960ea4ab4d7e975abc4e833 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/android-8.1)
+Author: David <Davidteri91@gmail.com>
+Date:   Sun Sep 30 15:10:30 2018 +0200
+
+    language: italian: Fix rename_stock typo
+    
+    Change-Id: Ifea3aca26e8664416ec1b161d2b102a0592fc9c1
+    Signed-off-by: David Viteri <davidteri91@gmail.com>
+
+omnirom/android_external_busybox
+=================================
+
+commit f1e12f1ecea77ac70c115ce0363927d98a4d2412 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/android-8.1)
+Author: dianlujitao <dianlujitao@lineageos.org>
+Date:   Sat Mar 24 15:43:08 2018 +0800
+
+    busybox: Disable telnetd
+    
+     * Build failed on 32-bit arm devices, and we don't need it.
+    
+    external/busybox/networking/telnetd.c: In function 'make_new_session':
+    external/busybox/networking/telnetd.c:390:1: error: insn does not
+    satisfy its constraints:
+     }
+     ^
+    (insn 71 66 74 6 (cond_exec (gt (reg:CC 100 cc)
+                (const_int 0 [0]))
+            (set (mem/j/c:SI (plus:SI (reg/f:SI 12 ip [143])
+                        (const_int 12 [0xc])) [0 MEM[(struct globals *
+    {ref-all})&bb_common_bufsiz1].maxfd+0 S4 A8])
+                (unspec:SI [
+                        (reg/v:SI 5 r5 [orig:127 sock ] [127])
+                    ] UNSPEC_UNALIGNED_STORE)))
+    external/busybox/networking/telnetd.c:278 3309 {*p unaligned_storesi}
+         (expr_list:REG_DEAD (reg:CC 100 cc)
+            (expr_list:REG_DEAD (reg/f:SI 3 r3 [143])
+                (nil))))
+    external/busybox/networking/telnetd.c:390:1: internal compiler error: in
+    copyprop_hardreg_forward_1, at regcprop.c:775
+    Please submit a full bug report,
+    with preprocessed source if appropriate.
+    See <http://source.android.com/source/report-bugs.html> for
+    instructions.
+    
+    Change-Id: Ib1a0f1f5408064cdccd58338ef8a3d7ec1c79834
+
+LineageOS/android_external_sony_boringssl-compat
+=================================================
+
+commit a6bd2c1296d9a27db4406805b9e6cc9e06a83229 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/lineage-15.1)
+Author: LuK1337 <priv.luk@gmail.com>
+Date:   Wed Sep 13 00:08:44 2017 +0200
+
+    boringssl-compat: Update for O
+    
+    * Update bio_b64 handling.
+    * Update EVPerr macro so it doesn't trigger
+      -Wmissing-declarations warning.
+    
+    Change-Id: I9f658d67cdbfc9b313b1531ca83c8221d436dee2
+
+LineageOS/android_packages_resources_devicesettings
+====================================================
+
+commit bebde637dfdd4a73718ba5a99e639de3c43f55b5 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/lineage-15.1)
+Author: dianlujitao <dianlujitao@lineageos.org>
+Date:   Wed Feb 14 15:12:35 2018 +0800
+
+    Add string for pickup sensor
+    
+    Change-Id: I4a9eb85c517d57b79a027a44cd1d752fd9280fc8
+
+MindTheGapps/vendor_gapps
+==========================
+
+commit 0f6b4560288267b644c49de0fdc538fa30980708 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/github/master)
+Author: Paul Keith <javelinanddart@gmail.com>
+Date:   Tue Aug 7 14:27:25 2018 -0700
+
+    gapps: Fail if there's not enough space
+
+Galaxy-MSM8916/android_device_samsung_a3-common
+================================================
+
+commit 5577f0155f356a025d14a7fc179e3f8ed5878960 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:43 2018 -0400
+
+    a3-common: Add dotOS Makefile
+    
+    Change-Id: Ib687f8d437414c9de1a831dd2be653ad33b07697
+
+Galaxy-MSM8916/android_device_samsung_a3lte
+============================================
+
+commit 2278d79eb31321e0d4d217465ac8b35dc81db522 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:49 2018 -0400
+
+    a3lte: Add dotOS Makefile
+    
+    Change-Id: I603fc4eae5a9964b63a5fc0cd426cbef482b5899
+
+Galaxy-MSM8916/android_device_samsung_a3ulte
+=============================================
+
+commit ed85e1b1fe18fe6c20bca0e0c50f185958505bae (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:20 2018 -0400
+
+    a3ulte: Add dotOS Makefile
+    
+    Change-Id: I0f014008ddc635a6a276349690c63136471143f8
+
+Galaxy-MSM8916/android_device_samsung_a33g
+===========================================
+
+commit ff6b8cf7f996eeb7678e0955c33340169e809351 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:27 2018 -0400
+
+    a33g: Add dotOS Makefile
+    
+    Change-Id: I5497ae535fe8370adb8b4bc2a778ed4eb9896bdf
+
+Galaxy-MSM8916/android_device_samsung_gprimelte-common
+=======================================================
+
+commit 8299f9b3c312f25fe55527492df3c221b9e3f22e (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:23 2018 -0400
+
+    gprimelte-common: Add dotOS Makefile
+    
+    Change-Id: Ifebf312743c09f2ea0d15782eb0fc7ab87e4f988
+
+Galaxy-MSM8916/android_device_samsung_fortuna3g
+================================================
+
+commit e391abf411badc49e9e9822a16991da34120a039 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:57 2018 -0400
+
+    fortuna3g: Add dotOS Makefile
+    
+    Change-Id: If3576971ccf841fba370461ef725825ff2699c85
+
+Galaxy-MSM8916/android_device_samsung_fortunalteub
+===================================================
+
+commit e1f52504398b94a726a5e8ddf0c1691fe6cd6a62 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:29 2018 -0400
+
+    fortunalteub: Add dotOS Makefile
+    
+    Change-Id: Iebf212c2af9a2cb87ad68b7302541c628d5b30dd
+
+Galaxy-MSM8916/android_device_samsung_fortunave3g
+==================================================
+
+commit 433284858a52ffd045ba1b28c8889325a55fd0c0 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:12 2018 -0400
+
+    fortunave3g: Add dotOS Makefile
+    
+    Change-Id: Ifba949de293415e5c99a7784181a739ad70edde9
+
+Galaxy-MSM8916/android_device_samsung_gprimelte
+================================================
+
+commit a8dae7e86e7725024cb89c82ce62b2987e8a85c2 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:07 2018 -0400
+
+    gprimelte: Add dotOS Makefile
+    
+    Change-Id: Ie21a782eb3539c6d1996b74076a8ac01c1601218
+
+Galaxy-MSM8916/android_device_samsung_gprimeltespr
+===================================================
+
+commit 410764b7ca0fb771a82f3081c3716c7c80fc8783 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:46 2018 -0400
+
+    gprimeltespr: Add dotOS Makefile
+    
+    Change-Id: Ic77b401b63162aac7be1bf331d6d1f0811000dd8
+
+Galaxy-MSM8916/android_device_samsung_gprimeltetfnvzw
+======================================================
+
+commit 539b36b0f4b95781193f3c2ea7974023df2b359d (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:11 2018 -0400
+
+    gprimeltetfnvzw: Add dotOS Makefile
+    
+    Change-Id: I207f3b9ae019785014c687d352d134dd03167c98
+
+Galaxy-MSM8916/android_device_samsung_gprimeltexx
+==================================================
+
+commit 841588ab5e6a108c9c513f453f19a5abfad2e215 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:41 2018 -0400
+
+    gprimeltexx: Add dotOS Makefile
+    
+    Change-Id: Ia941712abe6937a3367c17c7ac25fc3c019f32a2
+
+Galaxy-MSM8916/android_device_samsung_gprimeltezt
+==================================================
+
+commit e151b2dfa186ee89213494ce7bb33df06d1388d1 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:17 2018 -0400
+
+    gprimeltezt: Add dotOS Makefile
+    
+    Change-Id: Ibcf69acd5160c02a888b49095b64fe88c2463603
+
+Galaxy-MSM8916/android_device_samsung_gte-common
+=================================================
+
+commit d24df7ea810e10d6cfd3e0e94159cade440b8792 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:53 2018 -0400
+
+    gte-common: Add dotOS Makefile
+    
+    Change-Id: Icfc24bf56bf456dce9f184410f728c97cccf01e7
+
+Galaxy-MSM8916/android_device_samsung_gtelwifiue
+=================================================
+
+commit 73cbd304cc1430c4e13ef097b7bce96a6a07d991 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:55 2018 -0400
+
+    gtelwifiue: Add dotOS Makefile
+    
+    Change-Id: Ifb7f0d4c77828bad1f45a4bbdd56fe478f68d683
+
+Galaxy-MSM8916/android_device_samsung_gtesqltespr
+==================================================
+
+commit 9804b3657e1a09075e6c2467801bbdeef124fc66 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:59 2018 -0400
+
+    gtesqltespr: Add dotOS Makefile
+    
+    Change-Id: I281213255cfb8baad047242bc0754308b707b847
+
+Galaxy-MSM8916/android_device_samsung_gt58wifi
+===============================================
+
+commit 55e1ab36507ac602effdd32186acf5a42cff2bee (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:11:43 2018 -0400
+
+    gt58wifi: Add dotOS Makefile
+    
+    Change-Id: I1f6101f6363129b41ca67923e0e3164af49c64e5
+
+Galaxy-MSM8916/android_device_samsung_gt510wifi
+================================================
+
+commit dd6105f301044f72298535c957ba9e1ca860a6a9 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:51 2018 -0400
+
+    gt510wifi: Add dotOS Makefile
+    
+    Change-Id: I63b5ef8a6076e4792ebf495f9bbeb3148d07d150
+
+Galaxy-MSM8916/android_device_samsung_gt510lte
+===============================================
+
+commit 19747ba2e82093f6b83fa22d54077a63092b61a7 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:33 2018 -0400
+
+    gt510lte: Add dotOS Makefile
+    
+    Change-Id: I1f34ed172f05d1644f136af6d482a06dc5cf69a6
+
+Galaxy-MSM8916/android_device_samsung_j5-common
+================================================
+
+commit 8165f36869f8655b2b8092e3ea5a25dcdb28fb65 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:11:48 2018 -0400
+
+    j5-common: Add dotOS Makefile
+    
+    Change-Id: I90383a238793e39de90659bb72b2c9bbd422096d
+
+Galaxy-MSM8916/android_device_samsung_j53gxx
+=============================================
+
+commit 43508c63ab8d166f32d133125e0c65f45a166eff (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:25 2018 -0400
+
+    j53gxx: Add dotOS Makefile
+    
+    Change-Id: I416f7c94b1cde98cb30580113ae6d4286c1b5893
+
+Galaxy-MSM8916/android_device_samsung_j5lte
+============================================
+
+commit aa7ec74c6d1299877daa78d3d02b585f7cbc4483 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:09 2018 -0400
+
+    j5lte: Add dotOS Makefile
+    
+    Change-Id: I69d904de9f211956bd75a20456da7e58d20506e1
+
+Galaxy-MSM8916/android_device_samsung_j5ltechn
+===============================================
+
+commit c075336c6d96c4957c04296a74aed4911cde35eb (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:16 2018 -0400
+
+    j5ltechn: Add dotOS Makefile
+    
+    Change-Id: Ia7cc648453cd9418d16d3bfa849982af7ec8c844
+
+Galaxy-MSM8916/android_device_samsung_j5nlte
+=============================================
+
+commit 6daaa690d58573913690d36a8f52bbf169e2e965 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:19 2018 -0400
+
+    j5nlte: Add dotOS Makefile
+    
+    Change-Id: I0770e66b25e5ab7e4556e82b28d6d1d8958b7c40
+
+Galaxy-MSM8916/android_device_samsung_j5x-common
+=================================================
+
+commit 5ff0cb14d1f41d20741c81614a49a79bee51091a (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:15 2018 -0400
+
+    j5x-common: Add dotOS Makefile
+    
+    Change-Id: Ia64a32243b197af7b190b000998d96e880206b20
+
+Galaxy-MSM8916/android_device_samsung_j5xnlte
+==============================================
+
+commit 60c96325d042fe20e59ebd120482b51660a36304 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:11:52 2018 -0400
+
+    j5xnlte: Add dotOS Makefile
+    
+    Change-Id: I581eb3e0b06d1789bc72f8a1e0dade3a1cc32bb7
+
+Galaxy-MSM8916/android_device_samsung_o7-common
+================================================
+
+commit 3f385e0bf5e59d416a05b0283f1ba486543551eb (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:44 2018 -0400
+
+    o7-common: Add dotOS Makefile
+    
+    Change-Id: Ifdfebb0b9a2a0a19916ba25835c94da174dcc089
+
+Galaxy-MSM8916/android_device_samsung_o7prolte
+===============================================
+
+commit 56d45cecbc54312290f796f2f5c629df76086c8d (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:21 2018 -0400
+
+    o7prolte: Add dotOS Makefile
+    
+    Change-Id: I1eeb6ef11bdf304cd653370a09240f6d0ca995ee
+
+Galaxy-MSM8916/android_device_samsung_j7lte-common
+===================================================
+
+commit 14aacc6d3b6488da8b888fc04a7f857e8ddf2296 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:11:45 2018 -0400
+
+    j7lte-common: Add dotOS Makefile
+    
+    Change-Id: Icba493366caeb4e306ca6f6313d167e4900a27b2
+
+Galaxy-MSM8916/android_device_samsung_j7ltespr
+===============================================
+
+commit c7544516a75bee5381b5847f1b0cf14836459c3a (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:12:34 2018 -0400
+
+    j7ltespr: Add dotOS Makefile
+    
+    Change-Id: I8635ff3f9b19337a85bb5c4beb218d67bb1923b0
+
+Galaxy-MSM8916/android_device_samsung_j7ltechn
+===============================================
+
+commit 559616f23d7a0755e248a65ab3a5b283e0246088 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: Vincent Zvikaramba <zvikaram@teach.cs.toronto.edu>
+Date:   Sun Oct 7 01:11:50 2018 -0400
+
+    j7ltechn: Add dotOS Makefile
+    
+    Change-Id: I9c4d776b50094dc32ccfb6e4a69ff5050a2c8cd9
+
+Galaxy-MSM8916/android_device_samsung_serranovexx-common
+=========================================================
+
+commit 2c3eb2edc1d4d367805f486189c361b4eb3a0f42 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: danile71 <danile71@gmail.com>
+Date:   Wed Oct 17 16:57:23 2018 +0300
+
+    serranovexx-common: Add PA Makefile
+    
+    Change-Id: I90f6b107b39327e587af043a93e49acf84f6542a
+    (cherry picked from commit 9496e46b8a2647174797264b8081b15a3c2536d6)
+
+Galaxy-MSM8916/android_device_samsung_serranovelte
+===================================================
+
+commit 0d70a2fbdca75c33a6bdfb4be2d3c0ef7e511d02 (grafted, HEAD, refs/remotes/m/lineage-15.1, refs/remotes/Galaxy-MSM8916/lineage-15.1)
+Author: danile71 <danile71@gmail.com>
+Date:   Wed Oct 17 17:13:53 2018 +0300
+
+    serranovelte: Add PA Makefile
+    
+    Change-Id: I943a2aa293afa6aeb201ff883ced6bb99826b08a
